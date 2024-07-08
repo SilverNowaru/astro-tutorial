@@ -1,5 +1,8 @@
 ---
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
 import '../styles/global.css';
+const pageTitle = "Pain-peko";
 ---
 
 <html lang="en">
@@ -12,11 +15,14 @@ import '../styles/global.css';
 	</head>
 	<body>
 
-		<h1>Oh boy I can't wait for this to break</h1>
+		<h1>{pageTitle}</h1>
 
-		<a href="/">Home</a>
-   		<a href="/about/">About</a>
-		<a href="/blog/">Blog</a>
-
+		<Header />
+		<Footer />
+		<script>
+			document.querySelector('.hamburger').addEventListener('click', () => {
+				document.querySelector('.nav-links').classList.toggle('expanded');
+			});
+		</script>
 	</body>
 </html>
